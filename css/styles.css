@@ -244,28 +244,28 @@ footer {
   color: var(--color-text-muted);
 }
 
-/* Recommendations */
-.recommendations {
+/* Testimonials */
+.testimonials {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
 }
 
-.recommendation {
+.testimonial {
   padding: var(--space-lg);
   background-color: #fff;
   border: 1px solid var(--color-border);
   border-radius: 8px;
 }
 
-.recommendation__quote {
+.testimonial__quote {
   font-family: var(--font-serif);
   font-style: italic;
   margin: 0 0 var(--space-md);
   font-size: 1.125rem;
 }
 
-.recommendation__author {
+.testimonial__author {
   margin: 0;
   font-size: 0.9375rem;
   color: var(--color-text-muted);
