@@ -218,6 +218,12 @@ footer {
   color: #fff;
 }
 
+.services {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 /* Services list */
 .services-list {
   list-style: none;
