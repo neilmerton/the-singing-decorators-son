@@ -1,0 +1,26 @@
+{
+  "title": "The Singing Decorator's Son",
+  "description": "Quality painting and decorating services with a personal touch",
+  "nav": [
+    {
+      "url": "/",
+      "label": "Home"
+    },
+    {
+      "url": "/services/",
+      "label": "Services"
+    },
+    {
+      "url": "/recommendations/",
+      "label": "Recommendations"
+    },
+    {
+      "url": "/about/",
+      "label": "About"
+    },
+    {
+      "url": "/contact/",
+      "label": "Contact"
+    }
+  ]
+}
