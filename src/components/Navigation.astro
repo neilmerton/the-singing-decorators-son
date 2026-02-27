@@ -10,6 +10,17 @@ import NavLink from "./NavLink.astro";
       {navLinks.map((link) => <NavLink link={link} />)}
       <li><a href="/contact" class="cta">Get Quote</a></li>
     </ul>
+    <button
+      class="menu-toggle-btn"
+      aria-label="Toggle mobile menu"
+      popovertarget="mobileMenuPopover">Menu</button
+    >
+    <div class="mobile-menu" id="mobileMenuPopover" popover>
+      <ul>
+        {navLinks.map((link) => <NavLink link={link} />)}
+        <li><a href="/contact" class="cta">Get Quote</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -59,6 +70,66 @@ import NavLink from "./NavLink.astro";
         color: white;
         padding: 0.6rem 1.2rem;
         text-decoration: none;
+        &:hover {
+          background-color: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  .menu-toggle-btn {
+    background-color: var(--color-accent);
+    border: none;
+    color: var(--color-bg);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    margin: initial;
+    position: absolute;
+    position-area: bottom span-left;
+    z-index: 10;
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      list-style: none;
+      align-items: stretch;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: block;
+      }
+
+      a {
+        padding: 0.75rem 1.5rem;
+        color: var(--color-text);
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+          background-color: var(--color-accent);
+          color: var(--color-bg);
+        }
+      }
+
+      & .cta {
+        background-color: var(--color-text);
+        border-radius: 2px; /* Sharp edges for precision */
+        color: white;
+        padding: 0.6rem 1.2rem;
+        text-decoration: none;
+        display: block;
+
         &:hover {
           background-color: var(--color-accent);
         }
