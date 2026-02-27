@@ -35,15 +35,23 @@ import NavLink from "./NavLink.astro";
     & .logo {
       color: var(--color-text);
       font-family: var(--font-heading);
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       text-decoration: none;
+
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
+      }
     }
 
     & ul {
       align-items: center;
-      display: flex;
+      display: none;
       gap: 2rem;
       list-style: none;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
 
       & .cta {
         background-color: var(--color-text);
