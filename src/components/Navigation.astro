@@ -40,7 +40,11 @@ import NavLink from "./NavLink.astro";
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
+
+      @media (min-width: 1056px) {
+        padding: 0 2rem;
+      }
     }
 
     & .logo {
@@ -60,7 +64,7 @@ import NavLink from "./NavLink.astro";
       gap: 2rem;
       list-style: none;
 
-      @media (min-width: 768px) {
+      @media (min-width: 1056px) {
         display: flex;
       }
 
@@ -86,7 +90,7 @@ import NavLink from "./NavLink.astro";
     font-size: 1rem;
     padding: 0.5rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1056px) {
       display: none;
     }
   }
