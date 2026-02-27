@@ -24,7 +24,7 @@ export const siteData = {
 
 export const gallery = [
   {
-    src: "/src/images/painting-01.jpg",
+    src: "images/painting-01.jpg",
     alt: "Victorian Living Room - Sage Green",
     category: "Residential",
   },
