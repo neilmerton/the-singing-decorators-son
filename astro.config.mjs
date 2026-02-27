@@ -19,6 +19,11 @@ export default defineConfig({
       }
     ]
   },
-
-  adapter: netlify()
+  adapter: netlify(),
+  image: {
+    domains: [
+      'localhost',
+      'the-singing-decorators-son.netlify.app',
+    ],
+  },
 });
