@@ -5,7 +5,7 @@ export const siteData = {
     tagline: "Precision painting and decorating for those who value detail, cleanliness, and classic craft.",
     email: "hello@artisandecor.co.uk",
     phone: "07701058569",
-    address: "Kensington, London, W8 4BA",
+    address: "Sandiway, Northwich, Cheshire",
     yearFounded: 2011,
     socials: [
       { platform: "Instagram", url: "#", icon: "IG" },
