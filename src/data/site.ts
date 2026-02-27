@@ -1,3 +1,22 @@
+import painting01 from '../images/painting-01.jpg';
+import painting02 from '../images/painting-02.jpg';
+import painting03 from '../images/painting-03.jpg';
+import painting04 from '../images/painting-04.jpg';
+import painting05 from '../images/painting-05.jpg';
+import painting06 from '../images/painting-06.jpg';
+import wallpaper01 from '../images/wallpaper-01.jpg';
+import wallpaper02 from '../images/wallpaper-02.jpg';
+import wallpaper03 from '../images/wallpaper-03.jpg';
+import wallpaper04 from '../images/wallpaper-04.jpg';
+import wallpaper05 from '../images/wallpaper-05.jpg';
+import wallpaper06 from '../images/wallpaper-06.jpg';
+import woodwork01 from '../images/woodwork-01.jpg';
+import woodwork02 from '../images/woodwork-02.jpg';
+import woodwork03 from '../images/woodwork-03.jpg';
+import woodwork04 from '../images/woodwork-04.jpg';
+import woodwork05 from '../images/woodwork-05.jpg';
+import woodwork06 from '../images/woodwork-06.jpg';
+
 export const siteData = {
   // Global Business Information
   brand: {
@@ -24,92 +43,92 @@ export const siteData = {
 
 export const gallery = [
   {
-    src: "/src/images/painting-01.jpg",
+    src: painting01,
     alt: "Victorian Living Room - Sage Green",
     category: "Residential",
   },
   {
-    src: "/src/images/painting-02.jpg",
+    src: painting02,
     alt: "Modern Kitchen - Matte Black Cabinets",
     category: "Interior",
   },
   {
-    src: "/src/images/painting-03.jpg",
+    src: painting03,
     alt: "Exterior Masonry - Classic White",
     category: "Exterior",
   },
   {
-    src: "/src/images/painting-04.jpg",
+    src: painting04,
     alt: "Master Bedroom - Feature Wall",
     category: "Residential",
   },
   {
-    src: "/src/images/painting-05.jpg",
+    src: painting05,
     alt: "Hallway Panelling - Deep Navy",
     category: "Commercial",
   },
   {
-    src: "/src/images/painting-06.jpg",
+    src: painting06,
     alt: "Bespoke Ceiling Rose - Gold Leaf",
     category: "Detailing",
   },
   {
-    src: "/src/images/wallpaper-01.jpg",
+    src: wallpaper01,
     alt: "Living Room - Floral Wallpaper",
     category: "Interior",
   },
   {
-    src: "/src/images/wallpaper-02.jpg",
+    src: wallpaper02,
     alt: "Boutique Shop - Geometric Mural",
     category: "Commercial",
   },
   {
-    src: "/src/images/wallpaper-03.jpg",
+    src: wallpaper03,
     alt: "Dining Room - Striped Wallpaper",
     category: "Interior",
   },
   {
-    src: "/src/images/wallpaper-04.jpg",
+    src: wallpaper04,
     alt: "Feature Wall - Custom Mural",
     category: "Interior",
   },
   {
-    src: "/src/images/wallpaper-05.jpg",
+    src: wallpaper05,
     alt: "Bedroom - Textured Fabric Wallcovering",
     category: "Interior",
   },
   {
-    src: "/src/images/wallpaper-06.jpg",
+    src: wallpaper06,
     alt: "Office - Metallic Geometric Wallpaper",
     category: "Commercial",
   },
   {
-    src: "/src/images/woodwork-01.jpg",
+    src: woodwork01,
     alt: "Custom Woodwork - Handcrafted Details",
     category: "Detailing",
   },
   {
-    src: "/src/images/woodwork-02.jpg",
+    src: woodwork02,
     alt: "Period Woodwork - Heritage Restoration",
     category: "Restoration",
   },
   {
-    src: "/src/images/woodwork-03.jpg",
+    src: woodwork03,
     alt: "Exterior Woodwork - Weatherproof Finish",
     category: "Exterior",
   },
   {
-    src: "/src/images/woodwork-04.jpg",
+    src: woodwork04,
     alt: "Bespoke Cornicing - Ornate Details",
     category: "Detailing",
   },
   {
-    src: "/src/images/woodwork-05.jpg",
+    src: woodwork05,
     alt: "Custom Staircase - Handcrafted Elegance",
     category: "Detailing",
   },
   {
-    src: "/src/images/woodwork-06.jpg",
+    src: woodwork06,
     alt: "Period Woodwork - Heritage Restoration",
     category: "Restoration",
   }

@@ -2,14 +2,12 @@
 import { Image } from "astro:assets";
 
 const { item } = Astro.props;
-
-const imageSrc = item.src;
 ---
 
 <div class="gallery-item">
   <div class="image-container">
     <Image
-      src={imageSrc}
+      src={item.src}
       alt={item.alt}
       width={800}
       height={1000}
