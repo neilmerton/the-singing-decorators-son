@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import { Image } from "astro:assets";
+import logo from "../images/logo.jpg";
 ---
 
 <Layout
@@ -21,7 +22,7 @@ import { Image } from "astro:assets";
       </div>
       <div class="about-image">
         <Image
-          src="/src/images/logo.jpg"
+          src={logo}
           alt="Logo depicting a father and son bears hands working together on a project, symbolizing the passing of craftsmanship from one generation to the next."
           width={500}
           height={500}
