@@ -2,33 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-
-const services = [
-  {
-    title: "Interior Finishing",
-    description:
-      "From heritage properties to modern apartments, we deliver flawless matte, eggshell, and gloss finishes with surgical precision.",
-    image: "https://images.unsplash.com/photo-1594653084654-71bc541f714e",
-  },
-  {
-    title: "Specialist Wallcoverings",
-    description:
-      "Expert installation of high-end wallpapers, fabric coverings, and bespoke murals, ensuring perfect pattern matching and invisible seams.",
-    image: "https://images.unsplash.com/photo-1615873968403-89e068628265",
-  },
-  {
-    title: "Exterior Preservation",
-    description:
-      "Utilizing advanced weather-shielding technology to protect and beautify masonry, woodwork, and metalwork against the elements.",
-    image: "https://images.unsplash.com/photo-1510000084732-132d36a5bb44",
-  },
-  {
-    title: "Bespoke Restoration",
-    description:
-      "Careful repair and restoration of ornate cornicing, ceiling roses, and period woodwork using traditional techniques.",
-    image: "https://images.unsplash.com/photo-1581850518616-bcb8077fa212",
-  },
-];
+import { services } from "../data/site.js";
 ---
 
 <Layout

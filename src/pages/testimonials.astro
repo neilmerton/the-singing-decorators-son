@@ -1,39 +1,8 @@
 ---
+import { testimonials } from "../data/site";
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import TestimonialCard from "../components/TestimonialCard.astro";
-
-const reviews = [
-  {
-    quote:
-      "The attention to detail in the ornate cornicing was remarkable. A truly clean and professional transformation of our Victorian hallway.",
-    author: "Eleanor Vance",
-    location: "Kensington",
-    projectType: "Heritage Restoration",
-    featured: true,
-  },
-  {
-    quote:
-      "Finally, a decorator who values precision as much as we do. The matte finish on our cabinets is flawless.",
-    author: "Marcus Thorne",
-    location: "Chelsea",
-    projectType: "Interior Finishing",
-  },
-  {
-    quote:
-      "Absolute professional. Arrived on time, left the house spotless every day, and the result is world-class.",
-    author: "Sarah Jenkins",
-    location: "Richmond",
-    projectType: "Residential Painting",
-  },
-  {
-    quote:
-      "Our boutique shop needed a very specific aesthetic. Artisan Decor delivered exactly what we envisioned with zero fuss.",
-    author: "Julian Estanza",
-    location: "Soho",
-    projectType: "Commercial Decor",
-  },
-];
 ---
 
 <Layout
@@ -43,9 +12,9 @@ const reviews = [
   <Section title="Words from our Clients">
     <div class="testimonial-grid">
       {
-        reviews.map((review) => (
-          <div class:list={["grid-item", { featured: review.featured }]}>
-            <TestimonialCard {...review} />
+        testimonials.map((testimonial) => (
+          <div class:list={["grid-item", { featured: testimonial.featured }]}>
+            <TestimonialCard {...testimonial} />
           </div>
         ))
       }

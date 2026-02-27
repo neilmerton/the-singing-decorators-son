@@ -1,15 +1,13 @@
 ---
+import { siteData } from "../data/site";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 interface Props {
-  title: string;
   description?: string;
+  title: string;
 }
 
-const {
-  title,
-  description = "Professional Painting & Decorating - Clean, Precise, Classic.",
-} = Astro.props;
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+const { description = siteData.brand.tagline, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,7 +17,7 @@ import Footer from "../components/Footer.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | Artisan Decor</title>
+    <title>{title} | {siteData.brand.name}</title>
     <meta name="description" content={description} />
   </head>
   <body>

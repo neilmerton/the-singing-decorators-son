@@ -1,0 +1,190 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { siteData } from "../data/site";
+
+const { brand } = siteData;
+---
+
+<Layout
+  title="Request a Quote"
+  description={`Contact ${brand.name} for a precise painting and decorating consultation.`}
+>
+  <Section title="Get in Touch">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-block">
+          <h3>Direct Contact</h3>
+          <p>For urgent inquiries or to speak directly with a craftsman:</p>
+          <address>
+            <a href={`tel:${brand.phone}`}>{brand.phone}</a>
+            <a href={`mailto:${brand.email}`}>{brand.email}</a>
+          </address>
+        </div>
+
+        <div class="info-block">
+          <h3>Service Area</h3>
+          <p>
+            Based in {brand.address.split(",")[0]}, we serve residential and
+            commercial clients across the greater region.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <h3>The Process</h3>
+          <div class="step">
+            <span class="step-num">01</span>
+            <div>
+              <strong>Initial Inquiry</strong>
+              <p>
+                Submit the form with project details and any reference photos.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div>
+              <strong>Site Consultation</strong>
+              <p>
+                We visit the property to assess surfaces and discuss finishes.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div>
+              <strong>Formal Quotation</strong>
+              <p>You receive a detailed, fixed-price quote within 48 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-wrapper">
+        <div class="form-header">
+          <h3>Request a Consultation</h3>
+          <p>
+            Please fill out the form below. For the most accurate estimate,
+            mention the number of rooms and the current condition of the
+            surfaces.
+          </p>
+        </div>
+        <ContactForm />
+      </div>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  /* Info Column Styles */
+  .info-block {
+    margin-bottom: 3rem;
+    & h3 {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+    & address {
+      font-style: normal;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      & a {
+        font-size: 1.5rem;
+        color: var(--color-text);
+        text-decoration: none;
+        transition: color 0.3s;
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  /* Process Timeline */
+  .process-timeline {
+    & h3 {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+    }
+    & .step {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      & .step-num {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        color: var(--color-accent);
+        font-style: italic;
+      }
+      & strong {
+        display: block;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      & p {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  /* Form Column Styles */
+  .form-wrapper {
+    background: var(--color-muted);
+    padding: 3rem;
+    border-radius: var(--radius);
+
+    & .form-header {
+      margin-bottom: 2rem;
+      & h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      & p {
+        color: #666;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Target the ContactForm inside the wrapper */
+    & :global(.quote-form) {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      & :global(input),
+      & :global(select),
+      & :global(textarea) {
+        background: white;
+      }
+    }
+  }
+
+  /* Responsive Layout */
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+    .form-wrapper {
+      padding: 2rem;
+    }
+  }
+</style>
