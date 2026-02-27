@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title="The Artisan"
+  description="Learn about our philosophy of precision, preparation, and the classic art of decorating."
+>
+  <Section>
+    <div class="about-hero">
+      <div class="about-text">
+        <span class="sub-label">Our Story</span>
+        <h1>The hands of a <br /><span>Craftsman.</span></h1>
+        <p class="lead">
+          Founded on the principle that a perfect finish begins long before the
+          brush touches the paint. We specialize in the meticulous restoration
+          and decoration of homes that deserve the highest standard of care.
+        </p>
+      </div>
+      <div class="about-image">
+        <Image
+          src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1"
+          alt="Close up of high-quality painting tools"
+          width={600}
+          height={800}
+          format="avif"
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section background="muted" title="The Artisan Philosophy">
+    <div class="manifesto-grid">
+      <div class="philosophy-card">
+        <h3>01. Preparation First</h3>
+        <p>
+          The secret to longevity is in the substrate. We spend 70% of our time
+          on preparation—sanding, filling, and priming—to ensure the final coat
+          is flawless.
+        </p>
+      </div>
+      <div class="philosophy-card">
+        <h3>02. Technical Precision</h3>
+        <p>
+          Whether it’s a laser-straight cut-in line or a perfectly matched
+          wallpaper pattern, our work is defined by the details that others
+          might overlook.
+        </p>
+      </div>
+      <div class="philosophy-card">
+        <h3>03. Premium Materials</h3>
+        <p>
+          We exclusively use professional-grade pigments and sustainable
+          coatings that offer superior depth of color and lasting durability.
+        </p>
+      </div>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .about-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+
+    & .sub-label {
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    & h1 {
+      font-size: 4rem;
+      margin: 1rem 0 2rem;
+      & span {
+        color: var(--color-accent);
+        font-style: italic;
+      }
+    }
+
+    & .lead {
+      font-size: 1.25rem;
+      color: #555;
+      max-width: 500px;
+    }
+  }
+
+  .about-image img {
+    border-radius: 2px;
+    box-shadow: 30px 30px 0px var(--color-muted);
+  }
+
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 2rem;
+
+    & .philosophy-card {
+      & h3 {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--color-accent);
+        padding-bottom: 0.5rem;
+        display: inline-block;
+      }
+      & p {
+        color: #666;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .about-hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .manifesto-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+const { background = "white", title } = Astro.props;
+---
+
+<section class:list={["page-section", { "bg-muted": background === "muted" }]}>
+  <div class="container">
+    {title && <h2>{title}</h2>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .page-section {
+    padding: var(--section-spacing) 2rem;
+
+    &.bg-muted {
+      background: var(--color-muted);
+    }
+
+    & .container {
+      max-width: 1000px; /* Narrower container for readability */
+      margin: 0 auto;
+    }
+
+    & h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: var(--color-accent);
+        margin: 1rem auto;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+---
+
+<Layout title="404 - Page Not Found">
+  <Section>
+    <div class="error-container">
+      <span class="sub-label">Error 404</span>
+      <h1>Missing a coat <br /><span>of paint?</span></h1>
+      <p>
+        The page you are looking for doesn't exist or has been moved. Even the
+        best-prepared surfaces sometimes have a few gaps.
+      </p>
+
+      <div class="actions">
+        <a href="/" class="primary-btn">Back to Home</a>
+        <a href="/contact" class="secondary-btn">Report an Issue</a>
+      </div>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .error-container {
+    text-align: center;
+    padding: 4rem 0;
+    max-width: 600px;
+    margin: 0 auto;
+
+    & .sub-label {
+      color: var(--color-accent);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    & h1 {
+      font-size: 4rem;
+      margin: 1rem 0 2rem;
+      & span {
+        font-style: italic;
+        color: var(--color-accent);
+      }
+    }
+
+    & p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+
+    & a {
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    & .primary-btn {
+      background: var(--color-text);
+      color: white;
+      &:hover {
+        background: var(--color-accent);
+      }
+    }
+
+    & .secondary-btn {
+      border: 1px solid var(--color-text);
+      color: var(--color-text);
+      &:hover {
+        background: var(--color-muted);
+      }
+    }
+  }
+</style>

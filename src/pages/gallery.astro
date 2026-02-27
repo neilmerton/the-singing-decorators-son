@@ -1,0 +1,154 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import { Image } from "astro:assets";
+
+// In a real project, these would be in src/assets/gallery/
+// For now, we'll define a sample array.
+// Astro will automatically optimize these during build.
+const projects = [
+  {
+    src: "https://images.unsplash.com/photo-1562663474-6cbb3fee1c77",
+    alt: "Victorian Living Room - Sage Green",
+    category: "Residential",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f",
+    alt: "Modern Kitchen - Matte Black Cabinets",
+    category: "Interior",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1595844730298-b9f0ff98ffd0",
+    alt: "Exterior Masonry - Classic White",
+    category: "Exterior",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    alt: "Master Bedroom - Feature Wall",
+    category: "Residential",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1513161455079-7dc1e15efcd2",
+    alt: "Hallway Panelling - Deep Navy",
+    category: "Detailing",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1534349762230-e0cadf78f505",
+    alt: "Bespoke Ceiling Rose - Gold Leaf",
+    category: "Detailing",
+  },
+];
+---
+
+<Layout
+  title="Our Portfolio"
+  description="A showcase of our precision painting and decorating work across local homes and businesses."
+>
+  <Section title="The Portfolio">
+    <p class="intro-text">
+      From heritage restorations to contemporary transformations, every
+      brushstroke is guided by a commitment to quality and a classic aesthetic.
+    </p>
+
+    <div class="gallery-grid">
+      {
+        projects.map((project) => (
+          <div class="gallery-item">
+            <div class="image-container">
+              <Image
+                src={project.src}
+                alt={project.alt}
+                width={800}
+                height={1000}
+                format="avif"
+                quality="mid"
+                loading="lazy"
+              />
+              <div class="overlay">
+                <span class="category">{project.category}</span>
+                <h3>{project.alt}</h3>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .intro-text {
+    text-align: center;
+    max-width: 600px;
+    margin: -1.5rem auto 4rem;
+    color: #666;
+  }
+
+  .gallery-grid {
+    display: grid;
+    /* Clean, precise 2-column grid that expands to 3 on large screens */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .gallery-item {
+    & .image-container {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5; /* Consistent portrait feel */
+      background: var(--color-muted);
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* The "Classic" Overlay */
+      & .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(26, 26, 26, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        color: white;
+
+        & .category {
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--color-accent);
+          margin-bottom: 0.5rem;
+        }
+
+        & h3 {
+          font-size: 1.2rem;
+          font-family: var(--font-body);
+          font-weight: 300;
+        }
+      }
+
+      &:hover {
+        & img {
+          transform: scale(1.05);
+        }
+        & .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  /* Precise Responsive Adjustments */
+  @media (max-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+</style>

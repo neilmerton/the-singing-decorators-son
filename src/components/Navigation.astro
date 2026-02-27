@@ -1,0 +1,76 @@
+<nav class="site-nav">
+  <div class="container">
+    <a href="/" class="logo">Artisan <span>Decor</span></a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/testimonials">Testimonials</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="cta">Get Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+
+    & .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    & .logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: var(--color-text);
+      letter-spacing: 1px;
+      & span {
+        color: var(--color-accent);
+      }
+    }
+
+    & ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+
+      & a {
+        text-decoration: none;
+        color: var(--color-text);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
+
+      & .cta {
+        background: var(--color-text);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 2px; /* Sharp edges for precision */
+        &:hover {
+          background: var(--color-accent);
+        }
+      }
+    }
+  }
+</style>

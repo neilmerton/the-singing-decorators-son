@@ -1,0 +1,249 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import { Image } from "astro:assets";
+
+// Sample data for the home page teaser
+const featuredService = {
+	title: "Precision Interior Decorating",
+	description:
+		"Specializing in high-end residential finishes, from period property restoration to contemporary minimalism.",
+	image: "https://images.unsplash.com/photo-1581850518616-bcb8077fa212",
+};
+---
+
+<Layout
+	title="Home"
+	console.log();
+	description="Bespoke painting and decorating services. Classic techniques, modern precision."
+>
+	<section class="hero">
+		<div class="hero-content">
+			<span class="eyebrow">Established Excellence</span>
+			<h1>The art of a <span>flawless</span> finish.</h1>
+			<p>
+				Precision painting and decorating for those who value detail,
+				cleanliness, and classic craft.
+			</p>
+			<div class="hero-actions">
+				<a href="/contact" class="btn-primary">Request a Quote</a>
+				<a href="/gallery" class="btn-secondary">View Portfolio</a>
+			</div>
+		</div>
+	</section>
+
+	<Section background="muted">
+		<div class="teaser-grid">
+			<div class="teaser-text">
+				<h2>Clean. Precise. Classic.</h2>
+				<p>
+					We don't just change the color of a room; we transform the atmosphere.
+					Our approach is rooted in meticulous preparation and the use of the
+					world's finest pigments.
+				</p>
+				<a href="/about" class="text-link">Our Philosophy &rarr;</a>
+			</div>
+			<div class="teaser-stats">
+				<div class="stat">
+					<span class="number">15+</span>
+					<span class="label">Years Experience</span>
+				</div>
+				<div class="stat">
+					<span class="number">100%</span>
+					<span class="label">Clean Guarantee</span>
+				</div>
+			</div>
+		</div>
+	</Section>
+
+	<Section title="Our Specialism">
+		<div class="featured-service">
+			<div class="service-img">
+				<Image
+					src={featuredService.image}
+					alt="Interior finish"
+					width={1200}
+					height={600}
+					format="avif"
+				/>
+			</div>
+			<div class="service-details">
+				<h3>{featuredService.title}</h3>
+				<p>{featuredService.description}</p>
+				<a href="/services" class="btn-outline">Explore All Services</a>
+			</div>
+		</div>
+	</Section>
+
+	<Section background="muted">
+		<div class="home-cta">
+			<h2>Ready to transform your space?</h2>
+			<p>Consultations are complimentary and precise.</p>
+			<a href="/contact" class="btn-primary">Book a Consultation</a>
+		</div>
+	</Section>
+</Layout>
+
+<style>
+	/* 1. Hero Styles */
+	.hero {
+		height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background:
+			linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+			url("https://images.unsplash.com/photo-1562663474-6cbb3fee1c77?auto=format&fit=crop&w=1920&q=80");
+		background-size: cover;
+		background-position: center;
+		color: white;
+		text-align: center;
+		padding: 2rem;
+
+		& .hero-content {
+			max-width: 800px;
+			& .eyebrow {
+				text-transform: uppercase;
+				letter-spacing: 4px;
+				font-size: 0.8rem;
+				font-weight: 700;
+				color: var(--color-accent);
+			}
+			& h1 {
+				font-size: clamp(3rem, 8vw, 5rem);
+				margin: 1.5rem 0;
+				& span {
+					font-style: italic;
+					font-family: var(--font-heading);
+				}
+			}
+			& p {
+				font-size: 1.25rem;
+				margin-bottom: 2.5rem;
+				opacity: 0.9;
+			}
+		}
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 1.5rem;
+		justify-content: center;
+	}
+
+	/* 2. Teaser Grid */
+	.teaser-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+
+		& h2 {
+			font-size: 2.5rem;
+			margin-bottom: 1.5rem;
+		}
+		& .teaser-stats {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+			& .stat {
+				& .number {
+					display: block;
+					font-family: var(--font-heading);
+					font-size: 3rem;
+					color: var(--color-accent);
+				}
+				& .label {
+					text-transform: uppercase;
+					font-size: 0.75rem;
+					font-weight: 700;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+
+	/* 3. Featured Service Card */
+	.featured-service {
+		& .service-img img {
+			width: 100%;
+			height: 500px;
+			object-fit: cover;
+		}
+		& .service-details {
+			margin-top: 2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			& h3 {
+				font-size: 2rem;
+			}
+			& p {
+				max-width: 400px;
+				color: #666;
+			}
+		}
+	}
+
+	/* 4. Home CTA */
+	.home-cta {
+		text-align: center;
+		& h2 {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+		& p {
+			margin-bottom: 2rem;
+			font-size: 1.2rem;
+			color: #666;
+		}
+	}
+
+	/* Shared Buttons (These could be moved to Layout for global use) */
+	.btn-primary {
+		background: var(--color-accent);
+		color: white;
+		padding: 1rem 2rem;
+		text-decoration: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	.btn-secondary {
+		background: white;
+		color: var(--color-text);
+		padding: 1rem 2rem;
+		text-decoration: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	.btn-outline {
+		border: 1px solid var(--color-text);
+		color: var(--color-text);
+		padding: 0.8rem 1.5rem;
+		text-decoration: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+	}
+	.text-link {
+		color: var(--color-text);
+		font-weight: 700;
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-accent);
+	}
+
+	@media (max-width: 768px) {
+		.teaser-grid,
+		.featured-service .service-details {
+			grid-template-columns: 1fr;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 2rem;
+		}
+		.hero-actions {
+			flex-direction: column;
+		}
+	}
+</style>

@@ -1,0 +1,73 @@
+---
+const { quote, author, location, projectType } = Astro.props;
+---
+
+<div class="testimonial-card">
+  <span class="quote-mark">“</span>
+  <blockquote class="quote-text">
+    {quote}
+  </blockquote>
+  <div class="attribution">
+    <p class="author">{author}</p>
+    <p class="project-detail">{projectType} &mdash; {location}</p>
+  </div>
+</div>
+
+<style>
+  .testimonial-card {
+    padding: 3rem;
+    background: white;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .quote-mark {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--color-accent);
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    opacity: 0.3;
+  }
+
+  .quote-text {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .attribution {
+    & .author {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+
+    & .project-detail {
+      font-size: 0.75rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+</style>

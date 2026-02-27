@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+
+const reviews = [
+  {
+    quote:
+      "The attention to detail in the ornate cornicing was remarkable. A truly clean and professional transformation of our Victorian hallway.",
+    author: "Eleanor Vance",
+    location: "Kensington",
+    projectType: "Heritage Restoration",
+    featured: true,
+  },
+  {
+    quote:
+      "Finally, a decorator who values precision as much as we do. The matte finish on our cabinets is flawless.",
+    author: "Marcus Thorne",
+    location: "Chelsea",
+    projectType: "Interior Finishing",
+  },
+  {
+    quote:
+      "Absolute professional. Arrived on time, left the house spotless every day, and the result is world-class.",
+    author: "Sarah Jenkins",
+    location: "Richmond",
+    projectType: "Residential Painting",
+  },
+  {
+    quote:
+      "Our boutique shop needed a very specific aesthetic. Artisan Decor delivered exactly what we envisioned with zero fuss.",
+    author: "Julian Estanza",
+    location: "Soho",
+    projectType: "Commercial Decor",
+  },
+];
+---
+
+<Layout
+  title="Client Testimonials"
+  description="Read what our clients say about our precise painting and decorating services."
+>
+  <Section title="Words from our Clients">
+    <div class="testimonial-grid">
+      {
+        reviews.map((review) => (
+          <div class:list={["grid-item", { featured: review.featured }]}>
+            <TestimonialCard {...review} />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="cta-banner">
+      <h3>Ready to start your transformation?</h3>
+      <a href="/contact" class="gold-button">Request a Consultation</a>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 6rem;
+  }
+
+  /* The "Editorial" Feature */
+  .grid-item.featured {
+    grid-column: span 2;
+    & :global(.quote-text) {
+      font-size: 2rem;
+      max-width: 800px;
+    }
+  }
+
+  .cta-banner {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: var(--color-muted);
+    border-radius: 4px;
+
+    & h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .gold-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  /* Mobile Grid */
+  @media (max-width: 768px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+    .grid-item.featured {
+      grid-column: span 1;
+    }
+  }
+</style>
