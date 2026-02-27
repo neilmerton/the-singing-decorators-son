@@ -139,7 +139,7 @@ export const home = {
     eyebrow: "Established Excellence",
     title: "The art of a flawless finish.",
     description: "Precision painting and decorating for those who value detail, cleanliness, and classic craft.",
-    bgImage: "/src/images/wallpaper-04.jpg"
+    bgImage: wallpaper04
   },
   stats: [
     { label: "Years Experience", value: "15+" },
@@ -165,28 +165,28 @@ export const services = [
     title: "Interior Finishing",
     description:
       "From heritage properties to modern apartments, we deliver flawless matte, eggshell, and gloss finishes with surgical precision.",
-    image: "/src/images/painting-02.jpg",
+    image: painting02,
     slug: "interior-finishing"
   },
   {
     title: "Specialist Wallcoverings",
     description:
       "Expert installation of high-end wallpapers, fabric coverings, and bespoke murals, ensuring perfect pattern matching and invisible seams.",
-    image: "/src/images/wallpaper-02.jpg",
+    image: wallpaper02,
     slug: "specialist-wallcoverings"
   },
   {
     title: "Exterior Preservation",
     description:
       "Utilizing advanced weather-shielding technology to protect and beautify masonry, woodwork, and metalwork against the elements.",
-    image: "/src/images/woodwork-06.jpg",
+    image: woodwork06,
     slug: "exterior-preservation"
   },
   {
     title: "Bespoke Restoration",
     description:
       "Careful repair and restoration of ornate cornicing, ceiling roses, and period woodwork using traditional techniques.",
-    image: "/src/images/woodwork-01.jpg",
+    image: woodwork01,
     slug: "bespoke-restoration"
   },
 ];
