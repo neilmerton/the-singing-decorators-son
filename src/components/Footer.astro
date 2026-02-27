@@ -1,4 +1,5 @@
 ---
+import { navLinks, siteData } from "../data/site";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -6,42 +7,61 @@ const currentYear = new Date().getFullYear();
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="logo">Artisan <span>Decor</span></a>
+        <a href="/" class="logo">{siteData.brand.name}</a>
         <p>
-          Providing a refined standard of painting and decorating for discerning
-          homes and commercial spaces across London and the South East.
+          {siteData.brand.tagline}
         </p>
+        <p>Areas served: {siteData.brand.areas.join(", ")}</p>
       </div>
 
       <div class="footer-links">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/gallery">Portfolio</a></li>
-          <li><a href="/testimonials">Reviews</a></li>
-          <li><a href="/about">Our Story</a></li>
-          <li><a href="/contact">Get a Quote</a></li>
+          {
+            navLinks.map((link) => (
+              <li>
+                <a href={link.url}>{link.label}</a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div class="footer-contact">
         <h4>Contact</h4>
         <address>
-          <p><span>T:</span> 020 7946 0123</p>
-          <p><span>E:</span> hello@artisandecor.co.uk</p>
-          <p><span>A:</span> Kensington, London, W8 4BA</p>
+          <p><span>T:</span> {siteData.brand.phone}</p>
+          <p><span>E:</span> {siteData.brand.email}</p>
+          <p><span>A:</span> {siteData.brand.address}</p>
         </address>
         <div class="social-icons">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Pinterest">PI</a>
+          {
+            siteData.brand.socials.map((social) => (
+              <a href={social.url} aria-label={social.platform}>
+                {social.icon}
+              </a>
+            ))
+          }
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {currentYear} Artisan Decor Ltd. All rights reserved.</p>
-      <p class="credit">Site by YourName | Powered by Astro</p>
+      <p>
+        &copy; {siteData.brand.yearFounded} - {currentYear}
+        {siteData.brand.name}. All rights reserved.
+      </p>
+      <p class="footer-credit">
+        Site by <a
+          href="https://neil.merton.dev"
+          target="_blank"
+          rel="noopener noreferrer">Neil Merton</a
+        > &bullet; Powered by <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noopener noreferrer">Astro</a
+        >
+      </p>
     </div>
   </div>
 </footer>
@@ -77,13 +97,15 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     & .logo {
       font-family: var(--font-heading);
       font-size: 1.8rem;
       text-decoration: none;
       color: white;
       display: block;
-      margin-bottom: 1.5rem;
       & span {
         color: var(--color-accent);
       }
@@ -125,6 +147,15 @@ const currentYear = new Date().getFullYear();
         font-weight: 700;
         margin-right: 0.5rem;
       }
+    }
+  }
+
+  .footer-credit a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+    &:hover {
+      color: var(--color-accent);
     }
   }
 

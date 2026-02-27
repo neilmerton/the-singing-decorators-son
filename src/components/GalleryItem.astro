@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+
+const { item } = Astro.props;
+
+const imageSrc = item.src;
+---
+
+<div class="gallery-item">
+  <div class="image-container">
+    <Image
+      src={imageSrc}
+      alt={item.alt}
+      width={800}
+      height={1000}
+      format="avif"
+      quality="mid"
+      loading="lazy"
+    />
+    <div class="overlay">
+      <span class="category">{item.category}</span>
+      <h3>{item.alt}</h3>
+    </div>
+  </div>
+</div>
+
+<style>
+  .gallery-item {
+    & .image-container {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 6;
+      background: var(--color-muted);
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* The "Classic" Overlay */
+      & .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(26, 26, 26, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        color: white;
+
+        & .category {
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--color-accent);
+          margin-bottom: 0.5rem;
+        }
+
+        & h3 {
+          font-size: 1.2rem;
+          font-family: var(--font-body);
+          font-weight: 300;
+        }
+      }
+
+      &:hover {
+        & img {
+          transform: scale(1.05);
+        }
+        & .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+</style>

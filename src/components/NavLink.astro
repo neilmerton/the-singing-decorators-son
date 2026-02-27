@@ -1,0 +1,41 @@
+---
+const { link } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+// Helper: is this nav item active?
+const isActive = (href: string): boolean => {
+  if (href === "/") {
+    return currentPath === "/";
+  }
+  return currentPath.startsWith(href);
+};
+---
+
+<li>
+  <a aria-current={isActive(link.url) ? "page" : undefined} href={link.url}
+    >{link.label}</a
+  >
+</li>
+
+<style>
+  a {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+
+    &[aria-current="page"] {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+</style>

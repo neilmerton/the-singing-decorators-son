@@ -8,13 +8,12 @@ const featuredService = {
 	title: "Precision Interior Decorating",
 	description:
 		"Specializing in high-end residential finishes, from period property restoration to contemporary minimalism.",
-	image: "https://images.unsplash.com/photo-1581850518616-bcb8077fa212",
+	image: "/src/images/painting-05.jpg",
 };
 ---
 
 <Layout
-	title="Home"
-	console.log();
+	title="Northwich Painting & Decorating Services"
 	description="Bespoke painting and decorating services. Classic techniques, modern precision."
 >
 	<section class="hero">
@@ -25,6 +24,7 @@ const featuredService = {
 				Precision painting and decorating for those who value detail,
 				cleanliness, and classic craft.
 			</p>
+			<p><small>No singing included.</small></p>
 			<div class="hero-actions">
 				<a href="/contact" class="btn-primary">Request a Quote</a>
 				<a href="/gallery" class="btn-secondary">View Portfolio</a>
@@ -171,15 +171,15 @@ const featuredService = {
 			object-fit: cover;
 		}
 		& .service-details {
-			margin-top: 2rem;
+			align-items: center;
 			display: flex;
-			justify-content: space-between;
-			align-items: flex-end;
+			flex-direction: column;
+			gap: 1rem;
+			margin-top: 2rem;
 			& h3 {
 				font-size: 2rem;
 			}
 			& p {
-				max-width: 400px;
 				color: #666;
 			}
 		}

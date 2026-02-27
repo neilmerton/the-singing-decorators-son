@@ -1,18 +1,13 @@
 ---
-import { navLinks } from "../data/site";
+import { navLinks, siteData } from "../data/site";
+import NavLink from "./NavLink.astro";
 ---
 
 <nav class="site-nav">
   <div class="container">
-    <a href="/" class="logo">Artisan <span>Decor</span></a>
+    <a href="/" class="logo">{siteData.brand.name}</a>
     <ul>
-      {
-        navLinks.map((link) => (
-          <li>
-            <a href={link.url}>{link.label}</a>
-          </li>
-        ))
-      }
+      {navLinks.map((link) => <NavLink link={link} />)}
       <li><a href="/contact" class="cta">Get Quote</a></li>
     </ul>
   </div>
@@ -38,43 +33,26 @@ import { navLinks } from "../data/site";
     }
 
     & .logo {
+      color: var(--color-text);
       font-family: var(--font-heading);
       font-size: 1.5rem;
       text-decoration: none;
-      color: var(--color-text);
-      letter-spacing: 1px;
-      & span {
-        color: var(--color-accent);
-      }
     }
 
     & ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
       align-items: center;
-
-      & a {
-        text-decoration: none;
-        color: var(--color-text);
-        font-size: 0.9rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: var(--color-accent);
-        }
-      }
+      display: flex;
+      gap: 2rem;
+      list-style: none;
 
       & .cta {
-        background: var(--color-text);
+        background-color: var(--color-text);
+        border-radius: 2px; /* Sharp edges for precision */
         color: white;
         padding: 0.6rem 1.2rem;
-        border-radius: 2px; /* Sharp edges for precision */
+        text-decoration: none;
         &:hover {
-          background: var(--color-accent);
+          background-color: var(--color-accent);
         }
       }
     }
