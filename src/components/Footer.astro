@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div class="footer-links">
-        <h4>Navigation</h4>
+        <h3>Navigation</h3>
         <ul>
           {
             navLinks.map((link) => (
@@ -28,7 +28,7 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div class="footer-contact">
-        <h4>Contact</h4>
+        <h3>Contact</h3>
         <address>
           <p><span>T</span> {siteData.brand.phone}</p>
           <p>
@@ -79,8 +79,9 @@ const currentYear = new Date().getFullYear();
 
 <style>
   .site-footer {
+    --footer-text-color: hsl(0, 0%, 55%);
     background: var(--color-text);
-    color: white;
+    color: var(--color-bg);
     padding: 5rem 2rem 2rem;
     margin-top: var(--section-spacing);
 
@@ -91,19 +92,19 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 0.8fr 1fr;
-    gap: 4rem;
-    padding-bottom: 4rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1.5fr 0.8fr 1fr;
+    padding-bottom: 4rem;
 
-    & h4 {
+    & h3 {
+      color: var(--color-accent-dark);
       font-family: var(--font-body);
-      text-transform: uppercase;
-      letter-spacing: 2px;
       font-size: 0.8rem;
-      color: var(--color-accent);
+      letter-spacing: 2px;
       margin-bottom: 1.5rem;
+      text-transform: uppercase;
     }
   }
 
@@ -112,17 +113,14 @@ const currentYear = new Date().getFullYear();
     flex-direction: column;
     gap: 1.5rem;
     & .logo {
-      color: white;
+      color: var(--color-bg);
       display: block;
       font-family: var(--font-heading);
       font-size: 1.8rem;
       text-decoration: none;
-      & span {
-        color: var(--color-accent);
-      }
     }
     & p {
-      color: #999;
+      color: var(--footer-text-color);
       font-size: 0.95rem;
       line-height: 1.7;
       max-width: 300px;
@@ -135,24 +133,24 @@ const currentYear = new Date().getFullYear();
       margin-bottom: 0.8rem;
     }
     & a {
-      color: #999;
+      color: var(--color-muted);
       text-decoration: none;
       font-size: 0.9rem;
       transition: color 0.3s;
       &:hover {
-        color: white;
+        color: var(--color-accent);
       }
     }
   }
 
   .footer-contact {
     & address {
-      color: #999;
+      color: var(--footer-text-color);
       font-size: 0.9rem;
       font-style: normal;
 
       a {
-        color: #fff;
+        color: var(--color-bg);
         text-decoration: none;
         transition: text-decoration 0.3s;
         &:hover {
@@ -163,7 +161,7 @@ const currentYear = new Date().getFullYear();
         margin-bottom: 0.5rem;
       }
       & span {
-        color: white;
+        color: var(--color-bg);
         font-weight: 700;
         margin-right: 0.5rem;
       }
@@ -171,7 +169,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-credit a {
-    color: #999;
+    color: var(--color-bg);
     text-decoration: none;
     transition: color 0.3s;
     &:hover {
@@ -184,18 +182,20 @@ const currentYear = new Date().getFullYear();
     gap: 1.5rem;
     margin-top: 2rem;
     & a {
-      color: white;
-      text-decoration: none;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-bg);
+      display: flex;
       font-size: 0.75rem;
       font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 35px;
       height: 35px;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      transition: border-color 0.3s;
+      text-decoration: none;
+      transition:
+        border-color 0.3s,
+        color 0.3s;
+      width: 35px;
       &:hover {
         border-color: var(--color-accent);
         color: var(--color-accent);
@@ -207,13 +207,12 @@ const currentYear = new Date().getFullYear();
     display: flex;
     justify-content: space-between;
     padding-top: 2rem;
-    color: #666;
+    color: var(--footer-text-color);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
 
-  /* Responsive Adjustments using 2026 Container Queries logic or standard Media Queries */
   @media (max-width: 850px) {
     .footer-grid {
       grid-template-columns: 1fr;

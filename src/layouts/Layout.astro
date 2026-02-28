@@ -39,10 +39,12 @@ const { description = siteData.brand.tagline, title } = Astro.props;
 
 <style is:global>
   :root {
-    --color-bg: #ffffff;
-    --color-text: #1a1a1a;
-    --color-accent: #b08d57;
-    --color-muted: #f4f4f4;
+    --color-bg: hsl(0, 0%, 100%);
+    --color-text: hsl(0, 0%, 10%);
+    --color-accent: hsl(36, 45%, 40%);
+    --color-accent-dark: hsl(36, 45%, 60%);
+    --color-accent-hover: hsl(36, 45%, 35%);
+    --color-muted: hsl(0, 0%, 96%);
     --section-spacing: 5rem;
   }
 
