@@ -1,21 +1,22 @@
-import painting01 from '../images/painting-01.jpg';
-import painting02 from '../images/painting-02.jpg';
-import painting03 from '../images/painting-03.jpg';
-import painting04 from '../images/painting-04.jpg';
-import painting05 from '../images/painting-05.jpg';
-import painting06 from '../images/painting-06.jpg';
-import wallpaper01 from '../images/wallpaper-01.jpg';
-import wallpaper02 from '../images/wallpaper-02.jpg';
-import wallpaper03 from '../images/wallpaper-03.jpg';
-import wallpaper04 from '../images/wallpaper-04.jpg';
-import wallpaper05 from '../images/wallpaper-05.jpg';
-import wallpaper06 from '../images/wallpaper-06.jpg';
-import woodwork01 from '../images/woodwork-01.jpg';
-import woodwork02 from '../images/woodwork-02.jpg';
-import woodwork03 from '../images/woodwork-03.jpg';
-import woodwork04 from '../images/woodwork-04.jpg';
-import woodwork05 from '../images/woodwork-05.jpg';
-import woodwork06 from '../images/woodwork-06.jpg';
+import painting01 from '@images/painting-01.jpg';
+import painting02 from '@images/painting-02.jpg';
+import painting03 from '@images/painting-03.jpg';
+import painting04 from '@images/painting-04.jpg';
+import painting05 from '@images/painting-05.jpg';
+import painting06 from '@images/painting-06.jpg';
+import wallpaper01 from '@images/wallpaper-01.jpg';
+import wallpaper02 from '@images/wallpaper-02.jpg';
+import wallpaper03 from '@images/wallpaper-03.jpg';
+import wallpaper04 from '@images/wallpaper-04.jpg';
+import wallpaper05 from '@images/wallpaper-05.jpg';
+import wallpaper06 from '@images/wallpaper-06.jpg';
+import woodwork01 from '@images/woodwork-01.jpg';
+import woodwork02 from '@images/woodwork-02.jpg';
+import woodwork03 from '@images/woodwork-03.jpg';
+import woodwork04 from '@images/woodwork-04.jpg';
+import woodwork05 from '@images/woodwork-05.jpg';
+import woodwork06 from '@images/woodwork-06.jpg';
+import type { GalleryItem, HomeItem, ManifestoItem, NavLinkItem, ServiceItem, TestimonialItem } from '../types';
 
 export const siteData = {
   // Global Business Information
@@ -41,7 +42,7 @@ export const siteData = {
   },
 };
 
-export const gallery = [
+export const gallery: GalleryItem[] = [
   {
     src: painting01,
     alt: "Victorian Living Room - Sage Green",
@@ -134,7 +135,7 @@ export const gallery = [
   }
 ]
 
-export const home = {
+export const home: HomeItem = {
   hero: {
     eyebrow: "Established Excellence",
     title: "The art of a flawless finish.",
@@ -147,12 +148,12 @@ export const home = {
   ]
 };
 
-export const manifesto = [
+export const manifesto: ManifestoItem[] = [
   { title: "01. Preparation First", text: "The secret to longevity is in the substrate. We spend 70% of our time on preparation." },
   { title: "02. Technical Precision", text: "Whether it’s a laser-straight cut-in line or a perfectly matched wallpaper pattern." }
 ]
 
-export const navLinks = [
+export const navLinks: NavLinkItem[] = [
   { label: "Home", url: "/" },
   { label: "Services", url: "/services" },
   { label: "Gallery", url: "/gallery" },
@@ -160,7 +161,7 @@ export const navLinks = [
   { label: "About", url: "/about" }
 ];
 
-export const services = [
+export const services: ServiceItem[] = [
   {
     title: "Interior Finishing",
     description:
@@ -169,11 +170,11 @@ export const services = [
     slug: "interior-finishing"
   },
   {
-    title: "Specialist Wallcoverings",
+    title: "Specialist Wall Coverings",
     description:
       "Expert installation of high-end wallpapers, fabric coverings, and bespoke murals, ensuring perfect pattern matching and invisible seams.",
     image: wallpaper02,
-    slug: "specialist-wallcoverings"
+    slug: "specialist-wall-coverings"
   },
   {
     title: "Exterior Preservation",
@@ -191,7 +192,7 @@ export const services = [
   },
 ];
 
-export const testimonials = [
+export const testimonials: TestimonialItem[] = [
   {
     quote:
       "Had Sam decorate several rooms, our staircase, hallway and outside guttering and downpipes. His workmanship was outstanding, he clearly demonstrated a desire to please his customer. Sam is very friendly, approachable and hardworking, I would without doubt use him again, and I would recommend him to anyone considering contacting him.",
@@ -206,6 +207,7 @@ export const testimonials = [
     author: "Ms. S",
     location: "Delamere",
     projectType: "Interior Finishing",
+    featured: false,
   },
   {
     quote:
@@ -213,6 +215,7 @@ export const testimonials = [
     author: "Mr. B",
     location: "Northwich",
     projectType: "Residential Painting",
+    featured: false,
   },
   {
     quote:
@@ -220,6 +223,7 @@ export const testimonials = [
     author: "Mr. J",
     location: "Cuddington",
     projectType: "Interior Finishing",
+    featured: false,
   },
   {
     quote:
@@ -227,5 +231,6 @@ export const testimonials = [
     author: "Ms. B",
     location: "Mold",
     projectType: "Interior Finishing",
+    featured: false,
   }
 ];
