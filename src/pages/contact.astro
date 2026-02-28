@@ -96,17 +96,22 @@ const { brand } = siteData;
       margin-bottom: 1rem;
     }
     & address {
-      font-style: normal;
       display: flex;
       flex-direction: column;
+      font-style: normal;
       gap: 0.5rem;
+      margin-block-start: 1rem;
       & a {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: var(--color-text);
         text-decoration: none;
         transition: color 0.3s;
         &:hover {
           color: var(--color-accent);
+        }
+
+        @media (min-width: 768px) {
+          font-size: 1.5rem;
         }
       }
     }
