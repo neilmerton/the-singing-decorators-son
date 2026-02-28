@@ -31,8 +31,19 @@ const currentYear = new Date().getFullYear();
         <h4>Contact</h4>
         <address>
           <p><span>T</span> {siteData.brand.phone}</p>
-          <p><span>E</span> {siteData.brand.email}</p>
-          <p><span>A</span> {siteData.brand.address}</p>
+          <p>
+            <span>E</span>
+            <a href={`mailto:${siteData.brand.email}`}>{siteData.brand.email}</a
+            >
+          </p>
+          <p>
+            <span>A</span>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteData.brand.address)}`}
+              target="_blank"
+              rel="noopener noreferrer">{siteData.brand.address}</a
+            >
+          </p>
         </address>
         <div class="social-icons">
           {
@@ -101,11 +112,11 @@ const currentYear = new Date().getFullYear();
     flex-direction: column;
     gap: 1.5rem;
     & .logo {
+      color: white;
+      display: block;
       font-family: var(--font-heading);
       font-size: 1.8rem;
       text-decoration: none;
-      color: white;
-      display: block;
       & span {
         color: var(--color-accent);
       }
@@ -136,9 +147,18 @@ const currentYear = new Date().getFullYear();
 
   .footer-contact {
     & address {
-      font-style: normal;
       color: #999;
       font-size: 0.9rem;
+      font-style: normal;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: text-decoration 0.3s;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
       & p {
         margin-bottom: 0.5rem;
       }
