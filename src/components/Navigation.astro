@@ -67,16 +67,15 @@ import NavLink from "./NavLink.astro";
       @media (min-width: 1056px) {
         display: flex;
       }
-
-      & .cta {
-        background-color: var(--color-text);
-        border-radius: 2px; /* Sharp edges for precision */
-        color: white;
-        padding: 0.6rem 1.2rem;
-        text-decoration: none;
-        &:hover {
-          background-color: var(--color-accent);
-        }
+    }
+    .cta {
+      background-color: var(--color-text);
+      border-radius: 2px; /* Sharp edges for precision */
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      &:hover {
+        background-color: var(--color-accent);
       }
     }
   }
@@ -96,47 +95,41 @@ import NavLink from "./NavLink.astro";
   }
 
   .mobile-menu {
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-accent);
     margin: initial;
     position: absolute;
     position-area: bottom span-left;
     z-index: 10;
 
     & ul {
+      align-items: stretch;
       display: flex;
       flex-direction: column;
       gap: 0;
       list-style: none;
-      align-items: stretch;
       margin: 0;
       padding: 0;
 
       li {
         display: block;
+        padding: 2px;
       }
 
       a {
-        padding: 0.75rem 1.5rem;
+        background-color: var(--color-bg);
+        border-radius: 0;
         color: var(--color-text);
-        text-decoration: none;
         display: block;
-
-        &:hover {
-          background-color: var(--color-accent);
-          color: var(--color-bg);
-        }
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
       }
 
-      & .cta {
-        background-color: var(--color-text);
-        border-radius: 2px; /* Sharp edges for precision */
-        color: white;
+      .cta {
+        background-color: var(--color-accent);
+        color: var(--color-bg);
         padding: 0.6rem 1.2rem;
         text-decoration: none;
-        display: block;
-
-        &:hover {
-          background-color: var(--color-accent);
-        }
       }
     }
   }
