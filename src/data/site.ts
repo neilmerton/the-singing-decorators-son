@@ -23,14 +23,13 @@ export const siteData = {
   brand: {
     name: "The Singing Decorator's Son",
     tagline: "Precision painting and decorating for those who value detail, cleanliness, and classic craft.",
-    email: "hello@artisandecor.co.uk",
+    email: "thesingingdecoratorsson@gmail.com",
     phone: "07701058569",
     address: "Sandiway, Northwich, Cheshire",
     yearFounded: 2011,
     socials: [
-      { platform: "Instagram", url: "#", icon: "IG" },
-      { platform: "Facebook", url: "#", icon: "FB" },
-      { platform: "Pinterest", url: "#", icon: "PI" }
+      { platform: "Instagram", url: "https://www.instagram.com/its_the_singing_decorators_son", icon: "IG" },
+      { platform: "Facebook", url: "https://www.facebook.com/profile.php?id=100091638318462", icon: "FB" },
     ],
     areas: [
       'Cuddington & Sandiway',
