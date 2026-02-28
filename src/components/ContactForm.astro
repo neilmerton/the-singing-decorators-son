@@ -1,9 +1,9 @@
 <form
-  name="contact"
-  method="POST"
-  data-netlify="true"
   action="/success"
   class="quote-form"
+  data-netlify="true"
+  method="POST"
+  name="contact"
 >
   <input type="hidden" name="form-name" value="contact" />
 
@@ -47,41 +47,33 @@
 </form>
 
 <style>
-  /* Modern Plain CSS (2026 standards) */
   .quote-form {
+    background: var(--bg-card, #f9f9f9);
+    border-radius: 0;
+    border: 1px solid #e2e2e2;
     display: grid;
     gap: 1.5rem;
-    max-width: 600px;
     margin: 2rem auto;
+    max-width: 600px;
     padding: 2rem;
-    background: var(--bg-card, #f9f9f9);
-    border-radius: 12px;
-    border: 1px solid #e2e2e2;
 
-    /* Native CSS Nesting */
     & .form-group {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
 
       & label {
-        font-weight: 600;
         font-size: 0.9rem;
+        font-weight: 600;
       }
 
       & input,
       & select,
       & textarea {
-        padding: 0.8rem;
+        border-radius: 0;
         border: 1.5px solid #ccc;
-        border-radius: 6px;
         font-family: inherit;
-        transition: border-color 0.2s ease;
-
-        &:focus {
-          outline: none;
-          border-color: var(--primary-color, #007bff);
-        }
+        padding: 0.75rem;
       }
     }
   }

@@ -48,6 +48,11 @@ const { description = siteData.brand.tagline, title } = Astro.props;
     --section-spacing: 5rem;
   }
 
+  :focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
   * {
     margin: 0;
     padding: 0;
