@@ -23,4 +23,5 @@ export default defineConfig({
 
   adapter: netlify(),
   integrations: [sitemap()],
+  site: 'https://the-singing-decorators-son.netlify.app',
 });
