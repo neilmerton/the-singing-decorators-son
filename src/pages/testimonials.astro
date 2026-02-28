@@ -35,12 +35,14 @@ import TestimonialCard from "../components/TestimonialCard.astro";
     margin-bottom: 6rem;
   }
 
-  /* The "Editorial" Feature */
-  .grid-item.featured {
-    grid-column: span 2;
-    & :global(.quote-text) {
-      font-size: 2rem;
-      max-width: 800px;
+  @media (min-width: 1056px) {
+    /* The "Editorial" Feature */
+    .grid-item.featured {
+      grid-column: span 2;
+      & :global(.quote-text) {
+        font-size: 2rem;
+        max-width: 800px;
+      }
     }
   }
 
