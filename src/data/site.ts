@@ -29,7 +29,7 @@ export const siteData = {
     yearFounded: 2011,
     socials: [
       { platform: "Instagram", url: "https://www.instagram.com/its_the_singing_decorators_son", icon: "IG" },
-      { platform: "Facebook", url: "https://www.facebook.com/profile.php?id=100091638318462", icon: "FB" },
+      { platform: "Facebook", url: "https://www.facebook.com/p/The-Singing-Decorators-Son-100091638318462/", icon: "FB" },
     ],
     areas: [
       'Cuddington & Sandiway',
